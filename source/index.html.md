@@ -13,6 +13,7 @@ includes:
   - auth_headers
   - localization
   - pagination
+  - filtering
   - auth_namespace
   - earth_namespace
   - users_namespace

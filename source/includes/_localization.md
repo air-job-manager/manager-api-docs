@@ -15,4 +15,4 @@ Parameter | Default | Description
 --------- | ------- | -----------
 lng | en-US | Set the language to use in the response
 
-<aside class="notice">Available locales: en-US, pt-BR</aside>
+<aside class="success">Available locales: en-US, pt-BR</aside>
