@@ -2,11 +2,11 @@
 title: Manager API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
+  - http
 
 toc_footers:
-  - <a href='https://app.airjobmanager.com'>Website</a>
-  - <a href='https://github.com/airjobmanager'>GitHub</a>
+  - <a href='https://app.airjobmanager.com' target="_blank">Website</a>
+  - <a href='https://github.com/airjobmanager' target="_blank">GitHub</a>
 
 includes:
   - intro

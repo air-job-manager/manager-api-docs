@@ -33,6 +33,6 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
   end
 
   def badge(id, name, value, color)
-    "[![#{id}](https://img.shields.io/badge/#{name}-#{value}-#{color}.svg)](https://shields.io/)"
+    "[![#{id}](https://img.shields.io/badge/#{name}-#{value}-#{color}.svg)](https://app.airjobmanager.com/)"
   end
 end
