@@ -12,6 +12,7 @@ includes:
   - intro
   - auth_headers
   - localization
+  - pagination
   - auth_namespace
   - earth_namespace
   - users_namespace
