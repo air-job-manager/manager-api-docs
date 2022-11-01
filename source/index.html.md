@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - intro
   - auth_headers
+  - localization
   - auth_namespace
   - earth_namespace
   - users_namespace

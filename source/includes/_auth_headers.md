@@ -33,5 +33,5 @@ Info on how to retrieve tokens, see the <a href="#auth">Auth session</a>
 </aside>
 
 <aside class="warning">
-  Be careful where you paste your tokens. JWTs are credentials which can grant access to resources. If someone elses has a token that you emmitted, you`ll be impersonated by this person while he is using the API.
+  Be careful where you paste your tokens. JWTs are credentials which can grant access to resources. If someone elses has a token that you emmitted, you'll be impersonated by this person while he is using the API.
 </aside>
