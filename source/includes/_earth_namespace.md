@@ -1,5 +1,5 @@
 # Earth
 
-## Continents
+## Continents endpoints
 
-## Countries
+## Countries endpoints

@@ -17,6 +17,13 @@ Air Job Manager expects for the `Authorization` header in the `Bearer token` for
 
 Info on how to retrieve tokens, see the <a href="#auth">Auth session</a>
 
+### Tokens Validity
+
+Token    | Description |
+--------- | ----------- |
+Access-Token | 1 day    |
+Refresh-Token| 2 weeks  |
+
 <aside class="notice">
   All endpoints will point out which kind of authentication is required. It can be one of the following:
   <br />
