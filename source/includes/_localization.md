@@ -3,7 +3,6 @@
 > You can include the lng query param in all your requests:
 
 ```shell
-# With shell, you can just pass the correct header with each request
 curl "api_endpoint_here?lng=en-US"
 ```
 
