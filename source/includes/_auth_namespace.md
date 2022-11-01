@@ -12,6 +12,9 @@
 
 ### MFA challenge
 
+<!-- Endpoint badges -->
+<%= badge('auth_type', 'Auth', 'Anonymous', 'blue') %>
+
 > Endpoint URL:
 
 ```plain

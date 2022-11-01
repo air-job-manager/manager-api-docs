@@ -31,4 +31,8 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
 
     "#{ENV['BASE_URL']}#{path}"
   end
+
+  def badge(id, name, value, color)
+    "[![#{id}](https://img.shields.io/badge/#{name}-#{value}-#{color}.svg)](https://shields.io/)"
+  end
 end
