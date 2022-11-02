@@ -612,7 +612,7 @@ In the response headers, you&#39;ll find the <code>Locale</code> header, specify
 <blockquote>
 <p>Sign in URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/login
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/login
 </code></pre></div>
 <blockquote>
 <p>Sample request body:</p>
@@ -645,7 +645,7 @@ In the response headers, you&#39;ll find the <code>Locale</code> header, specify
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User and/or password incorrect"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/login</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/login</code></p>
 
 <p>This endpoint is used to sign in a <code>User</code>.</p>
 <h3 id='body-parameters'>Body parameters</h3>
@@ -714,7 +714,7 @@ In the response headers, you&#39;ll find the <code>Locale</code> header, specify
 <blockquote>
 <p>Sign out URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/logout
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/logout
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -724,7 +724,7 @@ In the response headers, you&#39;ll find the <code>Locale</code> header, specify
   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Session ended with success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>DELETE /auth/logout</code></p>
+<p><code>DELETE https://sandbox.airjobmanager.com/auth/logout</code></p>
 
 <p>This endpoint is used to sign out a <code>User</code>, after this is completed, any requests using the same access token will be unauthorized.</p>
 <h3 id='possible-responses-2'>Possible responses</h3>
@@ -743,7 +743,7 @@ In the response headers, you&#39;ll find the <code>Locale</code> header, specify
 <blockquote>
 <p>Refresh access token URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/refresh
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/refresh
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -769,7 +769,7 @@ In the response headers, you&#39;ll find the <code>Locale</code> header, specify
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Refresh token was not included in request headers"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/refresh</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/refresh</code></p>
 
 <p>This endpoint is used to get a new access token using the refresh token received in the authentication response.
 This action can be performed any time before the expiration the refresh token, in other words, it doesn&#39;t matter if the access token is already expired or not.</p>
@@ -834,7 +834,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>MFA challenge URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/mfa/challenge
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/mfa/challenge
 </code></pre></div>
 <blockquote>
 <p>Sample request body:</p>
@@ -870,7 +870,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect TOTP code"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/mfa/challenge</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/mfa/challenge</code></p>
 
 <p>This endpoint is used to sign in a <code>User</code> that has MFA enabled, this should be called after the sign in endpoint.</p>
 <h3 id='body-parameters-2'>Body parameters</h3>
@@ -937,7 +937,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Revalidate MFA challenge URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/mfa/rechallenge
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/mfa/rechallenge
 </code></pre></div>
 <blockquote>
 <p>Sample request body:</p>
@@ -964,7 +964,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect TOTP code"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/mfa/rechallenge</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/mfa/rechallenge</code></p>
 
 <p>This endpoint is used to revalidate the MFA of a <code>User</code> already authenticated, useful, for example, before showing or update sensible information.</p>
 <h3 id='body-parameters-3'>Body parameters</h3>
@@ -1000,7 +1000,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Retrieve backup codes URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/mfa/backup
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/mfa/backup
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -1010,7 +1010,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"backup_codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">203145</span><span class="p">,</span><span class="w"> </span><span class="mi">398125</span><span class="p">,</span><span class="w"> </span><span class="mi">587516</span><span class="p">,</span><span class="w"> </span><span class="mi">084274</span><span class="p">,</span><span class="w"> </span><span class="mi">457890</span><span class="p">,</span><span class="w"> </span><span class="mi">587293</span><span class="p">,</span><span class="w"> </span><span class="mi">872419</span><span class="p">,</span><span class="w"> </span><span class="mi">865926</span><span class="p">,</span><span class="w"> </span><span class="mi">289174</span><span class="p">,</span><span class="w"> </span><span class="mi">567278</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>GET /auth/mfa/backup</code></p>
+<p><code>GET https://sandbox.airjobmanager.com/auth/mfa/backup</code></p>
 
 <p>This endpoint generates and returns the codes to the <code>User</code>. Any of the codes can be used to recover his account, in case his has no access to the previously setup Authenticator App.</p>
 <h3 id='possible-responses-6'>Possible responses</h3>
@@ -1043,7 +1043,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>MFA backup challenge URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/mfa/recovery
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/mfa/recovery
 </code></pre></div>
 <blockquote>
 <p>Sample request body:</p>
@@ -1079,7 +1079,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect HOTP code"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/mfa/recovery</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/mfa/recovery</code></p>
 
 <p>This endpoint is used to recover the MFA access when the <code>User</code> has no longer access to his Authentication App. Any of the backup codes can be used.</p>
 <h3 id='body-parameters-4'>Body parameters</h3>
@@ -1150,7 +1150,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Enable MFA URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/mfa/create
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/mfa/create
 </code></pre></div>
 <blockquote>
 <p>Sample request body:</p>
@@ -1177,7 +1177,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect code. Try to scan the QRCode again."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/mfa/create</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/mfa/create</code></p>
 
 <p>This endpoint is used to validate that the <code>User</code> completed the MFA setup process, either by scanning the QRCode or typing the secret in the Authenticator App.</p>
 <h3 id='body-parameters-5'>Body parameters</h3>
@@ -1248,7 +1248,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Disable MFA URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/mfa/destroy
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/mfa/destroy
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -1258,7 +1258,7 @@ This action can be performed any time before the expiration the refresh token, i
     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multi-factor authentication disabled successfully"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>DELETE /auth/mfa/destroy</code></p>
+<p><code>DELETE https://sandbox.airjobmanager.com/auth/mfa/destroy</code></p>
 
 <p>This endpoint disables the MFA for the authenticated <code>User</code> and erases his secret.</p>
 <h3 id='possible-responses-9'>Possible responses</h3>
@@ -1289,7 +1289,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>MFA details URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/mfa/show
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/mfa/show
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -1301,7 +1301,7 @@ This action can be performed any time before the expiration the refresh token, i
     </span><span class="nl">"provisioning_uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"otpauth://totp/Air%20Job%20Manager:hugo.fonseca%40airjobmanager.com?secret=QQ5BNL6W4LGQEURFIHMN57ZD6KYMYTYV&amp;issuer=Air%20Job%20Manager"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>GET /auth/mfa/show</code></p>
+<p><code>GET https://sandbox.airjobmanager.com/auth/mfa/show</code></p>
 
 <p>This endpoint generates a secret and returns it to the setup of an Authenticator App.</p>
 <h3 id='possible-responses-10'>Possible responses</h3>
@@ -1354,7 +1354,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Claims index URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/claims
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/claims
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -1372,7 +1372,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>GET /auth/claims</code></p>
+<p><code>GET https://sandbox.airjobmanager.com/auth/claims</code></p>
 
 <p>This endpoint returns all claims registers</p>
 <h3 id='possible-responses-11'>Possible responses</h3>
@@ -1390,7 +1390,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Roles index URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/roles
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/roles
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -1418,7 +1418,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>GET /auth/roles</code></p>
+<p><code>GET https://sandbox.airjobmanager.com/auth/roles</code></p>
 
 <p>This endpoint returns all roles registers</p>
 <h3 id='possible-responses-12'>Possible responses</h3>
@@ -1433,7 +1433,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Create Claim URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/claim
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/claim
 </code></pre></div>
 <blockquote>
 <p>Sample request body</p>
@@ -1457,7 +1457,7 @@ This action can be performed any time before the expiration the refresh token, i
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/claim</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/claim</code></p>
 
 <p>This endpoint creates a new claim</p>
 <h3 id='body-parameters-6'>Body parameters</h3>
@@ -1505,9 +1505,9 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Delete Claim URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/claim/5721
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/claim/5721
 </code></pre></div>
-<p><code>DELETE /auth/claim/:id</code></p>
+<p><code>DELETE https://sandbox.airjobmanager.com/auth/claim/:id</code></p>
 
 <p>This endpoint deletes a claim</p>
 <h3 id='url-parameters'>URL parameters</h3>
@@ -1539,7 +1539,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Create Claim URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/role
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/role
 </code></pre></div>
 <blockquote>
 <p>Sample request body</p>
@@ -1564,7 +1564,7 @@ This action can be performed any time before the expiration the refresh token, i
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/role</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/role</code></p>
 
 <p>This endpoint creates a new role</p>
 <h3 id='body-parameters-7'>Body parameters</h3>
@@ -1612,9 +1612,9 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Delete Role URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/role/5721
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/role/5721
 </code></pre></div>
-<p><code>DELETE /auth/role/:id</code></p>
+<p><code>DELETE https://sandbox.airjobmanager.com/auth/role/:id</code></p>
 
 <p>This endpoint deletes a role</p>
 <h3 id='url-parameters-2'>URL parameters</h3>
@@ -1646,7 +1646,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Claim Assignment URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/claim/5721/assign
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/claim/5721/assign
 </code></pre></div>
 <blockquote>
 <p>Sample request body</p>
@@ -1720,7 +1720,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/claim/:id/assign</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/claim/:id/assign</code></p>
 
 <p>This endpoint assigns a existing claim to a role or user</p>
 <h3 id='url-parameters-3'>URL parameters</h3>
@@ -1786,7 +1786,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Claim Unassignment URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/claim/5721/unassign
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/claim/5721/unassign
 </code></pre></div>
 <blockquote>
 <p>Sample request body</p>
@@ -1846,7 +1846,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/claim/:id/unassign</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/claim/:id/unassign</code></p>
 
 <p>This endpoint unassigns a existing claim from a role or user</p>
 <h3 id='url-parameters-4'>URL parameters</h3>
@@ -1912,7 +1912,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Role Assignment URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/role/5721/assign
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/role/5721/assign
 </code></pre></div>
 <blockquote>
 <p>Sample request body</p>
@@ -1957,7 +1957,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/role/:id/assign</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/role/:id/assign</code></p>
 
 <p>This endpoint assigns a existing role to a user</p>
 <h3 id='url-parameters-5'>URL parameters</h3>
@@ -2010,7 +2010,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Role Unassignment URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /auth/role/5721/unassign
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/auth/role/5721/unassign
 </code></pre></div>
 <blockquote>
 <p>Sample request body</p>
@@ -2045,7 +2045,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /auth/role/:id/unassign</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/auth/role/:id/unassign</code></p>
 
 <p>This endpoint unassigns a existing role from a user</p>
 <h3 id='url-parameters-6'>URL parameters</h3>
@@ -2131,7 +2131,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Continents index URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /earth/continents
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/continents
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -2158,7 +2158,7 @@ This action can be performed any time before the expiration the refresh token, i
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>GET /earth/continents</code></p>
+<p><code>GET https://sandbox.airjobmanager.com/earth/continents</code></p>
 
 <p>This endpoint returns all continents registers</p>
 <h3 id='possible-responses'>Possible responses</h3>
@@ -2173,7 +2173,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Create Continent URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /earth/continents
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/continents
 </code></pre></div>
 <blockquote>
 <p>Sample request body</p>
@@ -2195,7 +2195,7 @@ This action can be performed any time before the expiration the refresh token, i
     </span><span class="nl">"countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /earth/continents</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/earth/continents</code></p>
 
 <p>This endpoint creates a new continent</p>
 <h3 id='body-parameters'>Body parameters</h3>
@@ -2234,7 +2234,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Update Continent URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /earth/continents/5721
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/continents/5721
 </code></pre></div>
 <blockquote>
 <p>Sample request body</p>
@@ -2255,7 +2255,7 @@ This action can be performed any time before the expiration the refresh token, i
     </span><span class="nl">"countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>PATCH OR PUT /earth/continents/:id</code></p>
+<p><code>PATCH OR PUT https://sandbox.airjobmanager.com/earth/continents/:id</code></p>
 
 <p>This endpoint updates a existing continent.</p>
 <h3 id='url-parameters'>URL parameters</h3>
@@ -2296,9 +2296,9 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Delete Continent URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /earth/continents/5721
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/continents/5721
 </code></pre></div>
-<p><code>DELETE /earth/continents/:id</code></p>
+<p><code>DELETE https://sandbox.airjobmanager.com/earth/continents/:id</code></p>
 
 <p>This endpoint deletes a continent</p>
 <h3 id='url-parameters-2'>URL parameters</h3>
@@ -2348,7 +2348,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Countries index URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /earth/countries
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/countries
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -2368,7 +2368,7 @@ This action can be performed any time before the expiration the refresh token, i
     </span><span class="p">],</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>GET /earth/countries</code></p>
+<p><code>GET https://sandbox.airjobmanager.com/earth/countries</code></p>
 
 <p>This endpoint returns all countries registers</p>
 <h3 id='possible-responses-5'>Possible responses</h3>
@@ -2383,7 +2383,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Show Country URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /earth/countries/5721
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/countries/5721
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -2397,7 +2397,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"flag_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://blob.download.url/argentina_flag.svg"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>GET /earth/countries/:id</code></p>
+<p><code>GET https://sandbox.airjobmanager.com/earth/countries/:id</code></p>
 
 <p>This endpoint returns a country in detail</p>
 <h3 id='possible-responses-6'>Possible responses</h3>
@@ -2412,7 +2412,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Create Country URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /earth/countries
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/countries
 </code></pre></div>
 <blockquote>
 <p>Sample request body (Multipart Form Data)</p>
@@ -2436,7 +2436,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"flag_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://blob.download.url/brazil_flag.svg"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /earth/countries</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/earth/countries</code></p>
 
 <p>This endpoint creates a new country</p>
 <h3 id='body-parameters-2'>Body parameters</h3>
@@ -2490,7 +2490,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Update Country URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /earth/countries/5721
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/countries/5721
 </code></pre></div>
 <blockquote>
 <p>Sample request body</p>
@@ -2509,7 +2509,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"flag_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://blob.download.url/brazil_flag.svg"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>PATCH OR PUT /earth/countries/:id</code></p>
+<p><code>PATCH OR PUT https://sandbox.airjobmanager.com/earth/countries/:id</code></p>
 
 <p>This endpoint updates a existing country.</p>
 <h3 id='url-parameters-3'>URL parameters</h3>
@@ -2550,9 +2550,9 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Delete Country URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /earth/countries/5721
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/countries/5721
 </code></pre></div>
-<p><code>DELETE /earth/countries/:id</code></p>
+<p><code>DELETE https://sandbox.airjobmanager.com/earth/countries/:id</code></p>
 
 <p>This endpoint deletes a country</p>
 <h3 id='url-parameters-4'>URL parameters</h3>
@@ -2601,7 +2601,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Sign Up URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /users/create
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/users/create
 </code></pre></div>
 <blockquote>
 <p>Sample request body:</p>
@@ -2630,7 +2630,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Name can't be blank"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>POST /users/create</code></p>
+<p><code>POST https://sandbox.airjobmanager.com/users/create</code></p>
 
 <p>This endpoint is used to sign up a <code>User</code> in the platform.</p>
 <h3 id='body-parameters'>Body parameters</h3>
@@ -2710,7 +2710,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Password change URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /users/password/change
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/users/password/change
 </code></pre></div>
 <blockquote>
 <p>Sample request body:</p>
@@ -2735,7 +2735,7 @@ This action can be performed any time before the expiration the refresh token, i
   </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Password confirmation doesn't match Password"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>PATCH /users/password/change</code></p>
+<p><code>PATCH https://sandbox.airjobmanager.com/users/password/change</code></p>
 
 <p>This endpoint is used to change the <code>User</code>&#39;s password when authenticated. In this case, the <code>User</code> still have access to his account.</p>
 <h3 id='body-parameters-2'>Body parameters</h3>
@@ -2810,7 +2810,7 @@ This action can be performed any time before the expiration the refresh token, i
 <blockquote>
 <p>Delete account URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  /users/delete
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/users/delete
 </code></pre></div>
 <blockquote>
 <p>Sample response body (200):</p>
@@ -2820,7 +2820,7 @@ This action can be performed any time before the expiration the refresh token, i
     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account deleted with success"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p><code>DELETE /users/delete</code></p>
+<p><code>DELETE https://sandbox.airjobmanager.com/users/delete</code></p>
 
 <p>This endpoint deletes the <code>User</code> account and all it&#39;s associated data.</p>
 <h3 id='possible-responses-3'>Possible responses</h3>
