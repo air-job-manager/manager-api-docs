@@ -7,7 +7,7 @@
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Anonymous', 'blue') %>
 
-> Endpoint URL:
+> Sign Up URL:
 
 ```plain
   <%= url_generation('POST', '/users/create', highlight: false) %>
@@ -84,7 +84,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
 
-> Endpoint URL:
+> Password change URL:
 
 ```plain
   <%= url_generation('POST', '/users/password/change', highlight: false) %>
@@ -160,7 +160,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
 
-> Endpoint URL:
+> Delete account URL:
 
 ```plain
   <%= url_generation('DELETE', '/users/delete', highlight: false) %>

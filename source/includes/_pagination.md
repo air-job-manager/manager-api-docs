@@ -31,3 +31,5 @@ per_page  | 20      | Specify how many itens will return in one page
   ...
 }
 ```
+
+<aside class="notice">For the sake of simplicity, the responses examples will omit this pagination data.</aside>

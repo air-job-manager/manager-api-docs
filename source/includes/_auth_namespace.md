@@ -7,7 +7,7 @@
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Anonymous', 'blue') %>
 
-> Endpoint URL:
+> Sign in URL:
 
 ```plain
   <%= url_generation('POST', '/auth/login', highlight: false) %>
@@ -88,7 +88,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
 
-> Endpoint URL:
+> Sign out URL:
 
 ```plain
   <%= url_generation('DELETE', '/auth/logout', highlight: false) %>
@@ -117,7 +117,7 @@ This endpoint is used to sign out a `User`, after this is completed, any request
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
 
-> Endpoint URL:
+> Refresh access token URL:
 
 ```plain
   <%= url_generation('POST', '/auth/refresh', highlight: false) %>
@@ -189,7 +189,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Anonymous', 'blue') %>
 
-> Endpoint URL:
+> MFA challenge URL:
 
 ```plain
   <%= url_generation('POST', '/auth/mfa/challenge', highlight: false) %>
@@ -271,7 +271,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
 
-> Endpoint URL:
+> Revalidate MFA challenge URL:
 
 ```plain
   <%= url_generation('POST', '/auth/mfa/rechallenge', highlight: false) %>
@@ -330,7 +330,7 @@ totp_code | String with the 6-digit TOTP (Time-based One Time Password) displaye
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
 
-> Endpoint URL:
+> Retrieve backup codes URL:
 
 ```plain
   <%= url_generation('GET', '/auth/mfa/backup', highlight: false) %>
@@ -365,7 +365,7 @@ backup_codes  | Array containing 10 HOTP (HMAC One Time Password) codes |
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Anonymous', 'blue') %>
 
-> Endpoint URL:
+> MFA backup challenge URL:
 
 ```plain
   <%= url_generation('POST', '/auth/mfa/recovery', highlight: false) %>
@@ -451,7 +451,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
 
-> Endpoint URL:
+> Enable MFA URL:
 
 ```plain
   <%= url_generation('POST', '/auth/mfa/create', highlight: false) %>
@@ -518,7 +518,7 @@ error  | User-friendly error message |
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
 
-> Endpoint URL:
+> Disable MFA URL:
 
 ```plain
   <%= url_generation('DELETE', '/auth/mfa/destroy', highlight: false) %>
@@ -551,7 +551,7 @@ message  | User-friendly message |
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
 
-> Endpoint URL:
+> MFA details URL:
 
 ```plain
   <%= url_generation('GET', '/auth/mfa/show', highlight: false) %>
