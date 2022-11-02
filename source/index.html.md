@@ -15,10 +15,10 @@ includes:
   - pagination
   - ordenation
   - filtering
+  - errors
   - auth_namespace
   - earth_namespace
   - users_namespace
-  - errors
 
 search: true
 

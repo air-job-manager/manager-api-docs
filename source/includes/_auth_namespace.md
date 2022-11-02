@@ -680,11 +680,160 @@ This endpoint returns all roles registers
 
 ### Create claim
 
+<!-- Endpoint badges -->
+<%= badge('auth_type', 'Auth', 'Authorized', 'red') %>
+
+> Create Claim URL:
+
+```plain
+  <%= url_generation('POST', '/auth/claim', highlight: false) %>
+```
+
+> Sample request body
+
+```json
+  {
+    "claim": {
+      "name": "Sample",
+      "assignable": true
+    }
+  }
+```
+
+> Sample response body (201)
+
+```json
+  {
+    "id": 4,
+    "name": "Sample",
+    "description": null,
+    "assignable": true
+  }
+```
+
+<%= url_generation('POST', '/auth/claim') %>
+
+This endpoint creates a new claim
+
+### Body parameters
+
+Parameter | Validations | Default | Description |
+--------- | ----------- | ------- | ----------- |
+name        | Required, Unique | None | Claim name |
+description | None | None | Optional user-friendly text description |
+assignable  | ---- | False | Determines which groupment may receive this claim |
+
+### Possible responses
+
+- `201 Created`
+- `422 Unprocessable entity`
+  - The creation is violating any of the validations described in the body parameters. In this case, the property `errors` will contain a array with user-friendly messages
+
 ### Delete claim
+
+<!-- Endpoint badges -->
+<%= badge('auth_type', 'Auth', 'Authorized', 'red') %>
+
+> Delete Claim URL:
+
+```plain
+  <%= url_generation('DELETE', '/auth/claim/5721', highlight: false) %>
+```
+
+<%= url_generation('DELETE', '/auth/claim/:id') %>
+
+This endpoint deletes a claim
+
+### URL parameters
+
+Parameter | Description |
+--------- | ----------- |
+id        | ID of the Claim to be deleted |
+
+### Possible responses
+
+- `204 No Content`
+- `404 Not Found`
+  - The ID provided in the URL do not match any existing claim
 
 ### Create role
 
+<!-- Endpoint badges -->
+<%= badge('auth_type', 'Auth', 'Authorized', 'red') %>
+
+> Create Claim URL:
+
+```plain
+  <%= url_generation('POST', '/auth/role', highlight: false) %>
+```
+
+> Sample request body
+
+```json
+  {
+    "role": {
+      "name": "Admin",
+      "description": "Can do everything"
+    }
+  }
+```
+
+> Sample response body (201)
+
+```json
+  {
+    "id": 2,
+    "name": "Admin",
+    "description": "Can do everything",
+    "assignable": false,
+    "claims": []
+  }
+```
+
+<%= url_generation('POST', '/auth/role') %>
+
+This endpoint creates a new role
+
+### Body parameters
+
+Parameter | Validations | Default | Description |
+--------- | ----------- | ------- | ----------- |
+name        | Required, Unique | None | Role name |
+description | None | None | Optional user-friendly text description |
+assignable  | None | False | Determines which groupment may receive this role |
+
+### Possible responses
+
+- `201 Created`
+- `422 Unprocessable entity`
+  - The creation is violating any of the validations described in the body parameters. In this case, the property `errors` will contain a array with user-friendly messages
+
 ### Delete role
+
+<!-- Endpoint badges -->
+<%= badge('auth_type', 'Auth', 'Authorized', 'red') %>
+
+> Delete Role URL:
+
+```plain
+  <%= url_generation('DELETE', '/auth/role/5721', highlight: false) %>
+```
+
+<%= url_generation('DELETE', '/auth/role/:id') %>
+
+This endpoint deletes a role
+
+### URL parameters
+
+Parameter | Description |
+--------- | ----------- |
+id        | ID of the Role to be deleted |
+
+### Possible responses
+
+- `204 No Content`
+- `404 Not Found`
+  - The ID provided in the URL do not match any existing role
 
 ### Claim assignment
 
@@ -693,3 +842,37 @@ This endpoint returns all roles registers
 ### Role assignment
 
 ### Role unassignment
+
+> Sample response body (404) for the Claim resource
+
+```json
+  {
+    "error": "The record does not exist or has been deleted",
+    "message": "Couldn't find Auth::Claim with 'id'=5721"
+  }
+```
+
+> Sample response body (422) for the Claim resource
+
+```json
+  {
+    "errors": ["Name can't be blank"]
+  }
+```
+
+> Sample response body (404) for the Role resource
+
+```json
+  {
+    "error": "The record does not exist or has been deleted",
+    "message": "Couldn't find Auth::Role with 'id'=5721"
+  }
+```
+
+> Sample response body (422) for the Role resource
+
+```json
+  {
+    "errors": ["Name has already been taken"]
+  }
+```
