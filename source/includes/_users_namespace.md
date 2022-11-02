@@ -39,8 +39,7 @@
 
 ```json
 {
-  "status": "Error during operation",
-  "error": "Name can't be blank"
+  "errors": ["Name can't be blank"]
 }
 ```
 
@@ -77,7 +76,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 
 - `422 Unprocessable entity`
 
-  - Occurs if the `User` violates any of the validations in the body parameters. In this case, the `error` property will contain a user-friendly message.
+  - Occurs if the `User` violates any of the validations in the body parameters. In this case, the `errors` property will contain a array of user-friendly messages.
 
 ### Password change
 
@@ -87,7 +86,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 > Password change URL:
 
 ```plain
-  <%= url_generation('POST', '/users/password/change', highlight: false) %>
+  <%= url_generation('PATCH', '/users/password/change', highlight: false) %>
 ```
 
 > Sample request body:
@@ -112,12 +111,11 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 
 ```json
 {
-  "status": "Error during operation",
-  "error": "Passwords does not match"
+  "errors": ["Password confirmation doesn't match Password"]
 }
 ```
 
-<%= url_generation('POST', '/users/password/change') %>
+<%= url_generation('PATCH', '/users/password/change') %>
 
 This endpoint is used to change the `User`'s password when authenticated. In this case, the `User` still have access to his account.
 
@@ -153,7 +151,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 
 - `422 Unprocessable entity`
 
-  - Occurs if the `User` violates any of the validations in the body parameters. In this case, the `error` property will contain a user-friendly message.
+  - Occurs if the `User` violates any of the validations in the body parameters. In this case, the `errors` property will contain a array of user-friendly messages.
 
 ### Delete account
 

@@ -97,7 +97,7 @@ name      | Required | Continent name |
 
 - `201 Created`
 - `422 Unprocessable entity`
-  - In this case, the property `continent.errors` will contain a user-friendly message
+  - The creation is violating any of the validations described in the body parameters. In this case, the property `errors` will contain a array with user-friendly messages
 
 ### Update Continent
 
@@ -149,7 +149,7 @@ id        | ID of the Continent to be updated |
 - `404 Not Found`
   - The ID provided in the URL do not match any existing continent
 - `422 Unprocessable entity`
-  - The update is violating any of the continent validations. In this case, the property `continent.errors` will contain a user-friendly message
+  - The update is violating any of the continent validations. In this case, the property `errors` will contain a array with user-friendly messages
 
 <aside class="notice">The validations are the same valid to the <i>create</i> request</aside>
 
@@ -193,9 +193,7 @@ id        | ID of the Continent to be deleted |
 
 ```json
   {
-    "continent": {
-      "errors": "Code can't be blank"
-    }
+    "errors": ["Code can't be blank"]
   }
 ```
 
@@ -327,7 +325,7 @@ longitude     | Optional, .svg or .png | File of the country's flag |
 
 - `201 Created`
 - `422 Unprocessable entity`
-  - In this case, the property `country.errors` will contain a user-friendly message
+  - The creation is violating any of the validations described in the body parameters. In this case, the property `errors` will contain a array with user-friendly messages
 
 ### Update Country
 
@@ -377,7 +375,7 @@ id        | ID of the Country to be updated |
 - `404 Not Found`
   - The ID provided in the URL do not match any existing country
 - `422 Unprocessable entity`
-  - The update is violating any of the country validations. In this case, the property `country.errors` will contain a user-friendly message
+  - The update is violating any of the country validations. In this case, the property `errors` will contain a array with user-friendly messages
 
 <aside class="notice">The validations are the same valid to the <i>create</i> request</aside>
 
@@ -421,9 +419,7 @@ id        | ID of the Country to be deleted |
 
 ```json
   {
-    "country": {
-      "errors": "Code can't be blank"
-    }
+    "errors": ["Code can't be blank"]
   }
 ```
 
