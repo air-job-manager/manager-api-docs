@@ -15,12 +15,14 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  BASE_URL: https://sandbox.airjobmanager.com
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
       ruby-version: 3.1.2
-      BASE_URL: https://sandbox.airjobmanager.com
 
     steps:
       - name: Checkout code
