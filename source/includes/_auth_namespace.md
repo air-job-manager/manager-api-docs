@@ -592,9 +592,91 @@ provisioning_uri      | URI to generate the otpauth QRCode |
 
 ## Role-Based-Access-Control system (RBAC) endpoints
 
-### Get all claims
+### Claims index
+<!-- Endpoint badges -->
+<%= badge('auth_type', 'Auth', 'Authorized', 'red') %>
+<%= badge('auth_type', 'Pagination', 'Available', 'green') %>
+<%= badge('auth_type', 'Ordenation', 'Unavailable', 'red') %>
+<%= badge('auth_type', 'Filtering', 'Unavailable', 'red') %>
 
-### Get all roles
+> Claims index URL:
+
+```plain
+  <%= url_generation('GET', '/auth/claims', highlight: false) %>
+```
+
+> Sample response body (200):
+
+```json
+{
+ "claims": [
+    ...
+    {
+      "id": 1,
+      "name": "schedule#manage",
+      "description": "Allow user to manage the aircraft schedule",
+      "assignable": false
+    },
+    ...
+  ]
+}
+```
+
+<%= url_generation('GET', '/auth/claims') %>
+
+This endpoint returns all claims registers
+
+### Possible responses
+
+- `200 Success`
+
+### Roles index
+<!-- Endpoint badges -->
+<%= badge('auth_type', 'Auth', 'Authorized', 'red') %>
+<%= badge('auth_type', 'Pagination', 'Available', 'green') %>
+<%= badge('auth_type', 'Ordenation', 'Unavailable', 'red') %>
+<%= badge('auth_type', 'Filtering', 'Unavailable', 'red') %>
+
+> Roles index URL:
+
+```plain
+  <%= url_generation('GET', '/auth/roles', highlight: false) %>
+```
+
+> Sample response body (200):
+
+```json
+{
+ "roles": [
+    ...
+    {
+      "id": 1,
+      "name": "System Admin",
+      "description": "Can do anything. Part of the Air Job Manager engineering team",
+      "assignable": false,
+      "claims": [
+        ...
+        {
+          "id": 1,
+          "name": "schedule#manage",
+          "description": "Allow user to manage the aircraft schedule",
+          "assignable": false
+        },
+        ...
+      ],
+    }
+    ...
+  ]
+}
+```
+
+<%= url_generation('GET', '/auth/roles') %>
+
+This endpoint returns all roles registers
+
+### Possible responses
+
+- `200 Success`
 
 ### Create claim
 

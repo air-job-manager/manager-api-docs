@@ -6,7 +6,7 @@
 curl "api_endpoint_here?order_by=name&order_seq=DESC"
 ```
 
-All indexes endpoints accepts the following query params below:
+Unless specified in the endpoint documentation, all indexes endpoints accepts the following query params below:
 
 ### Ordenation Query Parameters
 
