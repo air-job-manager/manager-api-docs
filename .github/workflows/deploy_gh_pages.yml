@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ruby-version: 3.1.2
+      BASE_URL: https://sandbox.airjobmanager.com
 
     steps:
       - name: Checkout code
