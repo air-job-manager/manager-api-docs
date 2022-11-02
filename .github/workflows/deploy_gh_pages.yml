@@ -22,7 +22,7 @@ jobs:
         with:
           ruby-version: ${{ env.ruby-version }}
 
-      - name: Setup gems
+      - name: Setup bundle cache
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
@@ -31,14 +31,12 @@ jobs:
             gems-${{ runner.os }}-${{ env.ruby-version }}-
             gems-${{ runner.os }}-
 
-      - run: bundle config set deployment 'true'
-
-      - name: bundle install
+      - name: Install gems
         run: |
+          bundle config set deployment 'true'
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
-
-      - run: bundle exec middleman build
+          bundle exec middleman build
 
       - name: Deploy to GitHub pages
         uses: peaceiris/actions-gh-pages@v3
