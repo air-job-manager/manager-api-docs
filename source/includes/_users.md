@@ -1,8 +1,6 @@
 # Users
 
-## Account endpoints
-
-### Sign Up
+## Sign Up
 
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Anonymous', 'blue') %>
@@ -78,7 +76,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 
   - Occurs if the `User` violates any of the validations in the body parameters. In this case, the `errors` property will contain a array of user-friendly messages.
 
-### Password change
+## Password change
 
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
@@ -153,7 +151,7 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 
   - Occurs if the `User` violates any of the validations in the body parameters. In this case, the `errors` property will contain a array of user-friendly messages.
 
-### Delete account
+## Delete account
 
 <!-- Endpoint badges -->
 <%= badge('auth_type', 'Auth', 'Authenticated', 'green') %>
