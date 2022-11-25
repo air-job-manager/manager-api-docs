@@ -16,9 +16,12 @@ includes:
   - ordenation
   - filtering
   - errors
-  - auth_namespace
-  - earth_namespace
-  - users_namespace
+  - auth
+  - users
+  - mfa
+  - rbac
+  - continents
+  - countries
 
 search: true
 
