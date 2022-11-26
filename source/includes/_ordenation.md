@@ -1,14 +1,14 @@
 # Ordenation
 
+## How to use
+
 > You can include the following query params in all indexes requests:
 
 ```shell
 curl "api_endpoint_here?order_by=name&order_seq=DESC"
 ```
 
-Unless specified in the endpoint documentation, all indexes endpoints accepts the following query params below:
-
-### Ordenation Query Parameters
+Unless otherwise specified in the endpoint documentation, all indexes endpoints accepts the following query params below:
 
 Parameter | Default | Description
 --------- | ------- | -----------

@@ -151,6 +151,97 @@ Expire-At   | UNIX Epoch when your `Access-Token` will expire |
 
   - Occurs if the `User` violates any of the validations in the body parameters. In this case, the `errors` property will contain a array of user-friendly messages.
 
+## Request password reset e-mail
+
+<!-- Endpoint badges -->
+<%= badge('auth_type', 'Auth', 'Anonymous', 'blue') %>
+
+> Request password reset e-mail URL:
+
+```plain
+  <%= url_generation('GET', '/users/password/send_email?email=hugo.fonseca%40airjobmanager.com', highlight: false) %>
+```
+
+<%= url_generation('GET', '/users/password/send_email') %>
+
+This endpoint is used to request a new e-mail with a token to reset the user's account password.
+
+### Query params
+
+Query | Description |
+--------- | ----------- |
+E-mail | String with the e-mail to receive the password reset token |
+
+### Possible responses
+
+- `204 No Content`
+
+  - This endpoint `ALWAYS` returns status code `204 - No Content`, but the e-mail will be sent only if the e-mail matches to an account. This is done this way so a external attacker can not list which e-mail are present in our databases.
+
+## Reset password
+
+<!-- Endpoint badges -->
+<%= badge('auth_type', 'Auth', 'Anonymous', 'blue') %>
+
+> Reset password URL:
+
+```plain
+  <%= url_generation('POST', '/users/password/send_email', highlight: false) %>
+```
+
+> Sample request body:
+
+```json
+  {
+    "email": "your.email@airjobmanager.com",
+    "token": "3a23d6af-a13e-444d-a51d-d1058b45bf5b",
+    "password": "averystrongpassword",
+    "password_confirmation": "averystrongpassword"
+  }
+```
+
+> Sample response body (422):
+
+```json
+  {
+    "status": "Error during operation",
+    "error": "Invalid password reset"
+  }
+```
+
+> Sample response body (422):
+
+```json
+  {
+    "errors": [
+      "Password confirmation doesn't match Password"
+    ]
+  }
+```
+
+<%= url_generation('POST', '/users/password/send_email') %>
+
+This endpoint is used to reset the user's account password providing the token received in the e-mail.
+
+### Body parameters
+
+Parameter | Description |
+--------- | ----------- |
+email     | String with account's e-mail |
+token     | String with token received in the e-mail |
+password     | String with new account's password |
+password_confirmation     | String with matching with password parameter |
+
+### Possible responses
+
+- `204 No Content`
+
+  - Account password has been reset successfully
+
+- `422 Unprocessable entity`
+
+  - Provided token is incorrect `OR` password does not match. In both cases, no changes are made to the account.
+
 ## Delete account
 
 <!-- Endpoint badges -->
