@@ -327,7 +327,7 @@
             <a href="#localization" class="toc-h1 toc-link" data-title="Localization">Localization</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#localization-query-parameters" class="toc-h2 toc-link" data-title="Localization Query Parameters">Localization Query Parameters</a>
+                    <a href="#how-to-use" class="toc-h2 toc-link" data-title="How to use">How to use</a>
                   </li>
               </ul>
           </li>
@@ -335,7 +335,7 @@
             <a href="#pagination" class="toc-h1 toc-link" data-title="Pagination">Pagination</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#pagination-query-parameters" class="toc-h2 toc-link" data-title="Pagination Query Parameters">Pagination Query Parameters</a>
+                    <a href="#how-to-use" class="toc-h2 toc-link" data-title="How to use">How to use</a>
                   </li>
               </ul>
           </li>
@@ -343,7 +343,7 @@
             <a href="#ordenation" class="toc-h1 toc-link" data-title="Ordenation">Ordenation</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#ordenation-query-parameters" class="toc-h2 toc-link" data-title="Ordenation Query Parameters">Ordenation Query Parameters</a>
+                    <a href="#how-to-use" class="toc-h2 toc-link" data-title="How to use">How to use</a>
                   </li>
               </ul>
           </li>
@@ -381,6 +381,12 @@
                   </li>
                   <li>
                     <a href="#password-change" class="toc-h2 toc-link" data-title="Password change">Password change</a>
+                  </li>
+                  <li>
+                    <a href="#request-password-reset-e-mail" class="toc-h2 toc-link" data-title="Request password reset e-mail">Request password reset e-mail</a>
+                  </li>
+                  <li>
+                    <a href="#reset-password" class="toc-h2 toc-link" data-title="Reset password">Reset password</a>
                   </li>
                   <li>
                     <a href="#delete-account" class="toc-h2 toc-link" data-title="Delete account">Delete account</a>
@@ -552,7 +558,7 @@
 <aside class="warning">
   Be careful where you paste your tokens. JWTs are credentials which can grant access to resources. If someone elses has a token that you emmitted, you'll be impersonated by this person while he is using the API.
 </aside>
-<h1 id='localization'>Localization</h1>
+<h1 id='localization'>Localization</h1><h2 id='how-to-use'>How to use</h2>
 <blockquote>
 <p>You can include the lng query param in all your requests:</p>
 </blockquote>
@@ -560,7 +566,7 @@
 </code></pre></div>
 <p>All endpoints accepts a query param called <code>lng</code> for you to choose which language you want the response.
 In the response headers, you&#39;ll find the <code>Locale</code> header, specifying which language was used.</p>
-<h3 id='localization-query-parameters'>Localization Query Parameters</h3>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -578,14 +584,14 @@ In the response headers, you&#39;ll find the <code>Locale</code> header, specify
 <aside class="success">Available locales: en-US, pt-BR</aside>
 
 <aside class="notice">For the sake of simplicity, these docs will only present the responses in the en-US localization</aside>
-<h1 id='pagination'>Pagination</h1>
+<h1 id='pagination'>Pagination</h1><h2 id='how-to-use'>How to use</h2>
 <blockquote>
 <p>You can include the following query params in all indexes requests:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint_here?page=1&amp;per_page=20"</span>
 </code></pre></div>
-<p>All indexes endpoints accepts the following query params below:</p>
-<h3 id='pagination-query-parameters'>Pagination Query Parameters</h3>
+<p>Unless otherwise specified in the endpoint documentation, all indexes endpoints accepts the following query params below:</p>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -622,14 +628,14 @@ In the response headers, you&#39;ll find the <code>Locale</code> header, specify
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <aside class="notice">For the sake of simplicity, the responses examples will omit this pagination data.</aside>
-<h1 id='ordenation'>Ordenation</h1>
+<h1 id='ordenation'>Ordenation</h1><h2 id='how-to-use'>How to use</h2>
 <blockquote>
 <p>You can include the following query params in all indexes requests:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint_here?order_by=name&amp;order_seq=DESC"</span>
 </code></pre></div>
-<p>Unless specified in the endpoint documentation, all indexes endpoints accepts the following query params below:</p>
-<h3 id='ordenation-query-parameters'>Ordenation Query Parameters</h3>
+<p>Unless otherwise specified in the endpoint documentation, all indexes endpoints accepts the following query params below:</p>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1202,6 +1208,116 @@ This action can be performed any time before the expiration the refresh token, i
 <li>Occurs if the <code>User</code> violates any of the validations in the body parameters. In this case, the <code>errors</code> property will contain a array of user-friendly messages.</li>
 </ul></li>
 </ul>
+<h2 id='request-password-reset-e-mail'>Request password reset e-mail</h2>
+<!-- Endpoint badges -->
+
+<p><a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Auth-Anonymous-blue.svg" alt="auth_type" /></a></p>
+
+<blockquote>
+<p>Request password reset e-mail URL:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/users/password/send_email?email=hugo.fonseca%40airjobmanager.com
+</code></pre></div>
+<p><code>GET https://sandbox.airjobmanager.com/users/password/send_email</code></p>
+
+<p>This endpoint is used to request a new e-mail with a token to reset the user&#39;s account password.</p>
+<h3 id='query-params'>Query params</h3>
+<table><thead>
+<tr>
+<th>Query</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>E-mail</td>
+<td>String with the e-mail to receive the password reset token</td>
+</tr>
+</tbody></table>
+<h3 id='possible-responses-3'>Possible responses</h3>
+<ul>
+<li><p><code>204 No Content</code></p>
+
+<ul>
+<li>This endpoint <code>ALWAYS</code> returns status code <code>204 - No Content</code>, but the e-mail will be sent only if the e-mail matches to an account. This is done this way so a external attacker can not list which e-mail are present in our databases.</li>
+</ul></li>
+</ul>
+<h2 id='reset-password'>Reset password</h2>
+<!-- Endpoint badges -->
+
+<p><a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Auth-Anonymous-blue.svg" alt="auth_type" /></a></p>
+
+<blockquote>
+<p>Reset password URL:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/users/password/send_email
+</code></pre></div>
+<blockquote>
+<p>Sample request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your.email@airjobmanager.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3a23d6af-a13e-444d-a51d-d1058b45bf5b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"averystrongpassword"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"averystrongpassword"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Sample response body (422):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error during operation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid password reset"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Sample response body (422):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Password confirmation doesn't match Password"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST https://sandbox.airjobmanager.com/users/password/send_email</code></p>
+
+<p>This endpoint is used to reset the user&#39;s account password providing the token received in the e-mail.</p>
+<h3 id='body-parameters-3'>Body parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>String with account&#39;s e-mail</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String with token received in the e-mail</td>
+</tr>
+<tr>
+<td>password</td>
+<td>String with new account&#39;s password</td>
+</tr>
+<tr>
+<td>password_confirmation</td>
+<td>String with matching with password parameter</td>
+</tr>
+</tbody></table>
+<h3 id='possible-responses-4'>Possible responses</h3>
+<ul>
+<li><p><code>204 No Content</code></p>
+
+<ul>
+<li>Account password has been reset successfully</li>
+</ul></li>
+<li><p><code>422 Unprocessable entity</code></p>
+
+<ul>
+<li>Provided token is incorrect <code>OR</code> password does not match. In both cases, no changes are made to the account.</li>
+</ul></li>
+</ul>
 <h2 id='delete-account'>Delete account</h2>
 <!-- Endpoint badges -->
 
@@ -1223,7 +1339,7 @@ This action can be performed any time before the expiration the refresh token, i
 <p><code>DELETE https://sandbox.airjobmanager.com/users/delete</code></p>
 
 <p>This endpoint deletes the <code>User</code> account and all it&#39;s associated data.</p>
-<h3 id='possible-responses-3'>Possible responses</h3>
+<h3 id='possible-responses-5'>Possible responses</h3>
 <ul>
 <li><code>200 Success</code></li>
 </ul>
