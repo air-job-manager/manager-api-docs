@@ -1,5 +1,7 @@
 # Localization
 
+## How to use
+
 > You can include the lng query param in all your requests:
 
 ```shell
@@ -8,8 +10,6 @@ curl "api_endpoint_here?lng=en-US"
 
 All endpoints accepts a query param called `lng` for you to choose which language you want the response.
 In the response headers, you'll find the `Locale` header, specifying which language was used.
-
-### Localization Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
