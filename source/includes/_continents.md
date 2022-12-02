@@ -43,6 +43,10 @@
 
 This endpoint returns all continents registers
 
+### Available filters
+
+- `name`
+
 ### Possible responses
 
 - `200 Success`
