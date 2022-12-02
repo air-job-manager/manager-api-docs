@@ -37,6 +37,12 @@
 
 This endpoint returns all countries registers
 
+### Available filters
+
+- `name`
+- `continent`
+- `timezone`
+
 ### Possible responses
 
 - `200 Success`
