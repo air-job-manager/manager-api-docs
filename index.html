@@ -349,6 +349,11 @@
           </li>
           <li>
             <a href="#filtering" class="toc-h1 toc-link" data-title="Filtering">Filtering</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#how-to-use" class="toc-h2 toc-link" data-title="How to use">How to use</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
@@ -656,8 +661,26 @@ In the response headers, you&#39;ll find the <code>Locale</code> header, specify
 </tbody></table>
 
 <aside class="warning">The <i>order_seq</i> parameter do not have any effect without the <i>order_by</i> parameter.</aside>
-<h1 id='filtering'>Filtering</h1>
-<p>Under construction...</p>
+<h1 id='filtering'>Filtering</h1><h2 id='how-to-use'>How to use</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint_here?order_by=name&amp;order_seq=DESC&amp;name=Airbus&amp;manufactured_after=may"</span>
+</code></pre></div>
+<p>Many indexes endpoints will allow you to filter your results. In each endpoint documentation, will you find the name of the params allowed for filtering the entity in discussion.
+You can send these params in the request via query param.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[name_of_param]</td>
+<td>Value for filtering</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <p>The Manager API uses the following error codes:</p>
 
@@ -2679,6 +2702,10 @@ This action can be performed any time before the expiration the refresh token, i
 <p><code>GET https://sandbox.airjobmanager.com/earth/continents</code></p>
 
 <p>This endpoint returns all continents registers</p>
+<h3 id='available-filters'>Available filters</h3>
+<ul>
+<li><code>name</code></li>
+</ul>
 <h3 id='possible-responses'>Possible responses</h3>
 <ul>
 <li><code>200 Success</code></li>
@@ -2889,6 +2916,12 @@ This action can be performed any time before the expiration the refresh token, i
 <p><code>GET https://sandbox.airjobmanager.com/earth/countries</code></p>
 
 <p>This endpoint returns all countries registers</p>
+<h3 id='available-filters'>Available filters</h3>
+<ul>
+<li><code>name</code></li>
+<li><code>continent</code></li>
+<li><code>timezone</code></li>
+</ul>
 <h3 id='possible-responses'>Possible responses</h3>
 <ul>
 <li><code>200 Success</code></li>
