@@ -127,6 +127,7 @@ name      | Required | Country name |
 latitude      | Required | Latitude of a point inside country, used for map translation |
 longitude     | Required | Longitude of a point inside country, used for map translation |
 longitude     | Optional, .svg or .png | File of the country's flag |
+continent_id | Required | ID of the Continent of this country |
 
 ### Possible responses
 
