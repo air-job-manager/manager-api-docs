@@ -496,6 +496,26 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#state" class="toc-h1 toc-link" data-title="State">State</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#states-index" class="toc-h2 toc-link" data-title="States Index">States Index</a>
+                  </li>
+                  <li>
+                    <a href="#show-state" class="toc-h2 toc-link" data-title="Show State">Show State</a>
+                  </li>
+                  <li>
+                    <a href="#create-state" class="toc-h2 toc-link" data-title="Create State">Create State</a>
+                  </li>
+                  <li>
+                    <a href="#update-state" class="toc-h2 toc-link" data-title="Update State">Update State</a>
+                  </li>
+                  <li>
+                    <a href="#delete-state" class="toc-h2 toc-link" data-title="Delete State">Delete State</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://app.airjobmanager.com' target="_blank">Website</a></li>
@@ -3023,6 +3043,11 @@ This action can be performed any time before the expiration the refresh token, i
 <td>Optional, .svg or .png</td>
 <td>File of the country&#39;s flag</td>
 </tr>
+<tr>
+<td>continent_id</td>
+<td>Required</td>
+<td>ID of the Continent of this country</td>
+</tr>
 </tbody></table>
 <h3 id='possible-responses-3'>Possible responses</h3>
 <ul>
@@ -3138,6 +3163,248 @@ This action can be performed any time before the expiration the refresh token, i
 </span></code></pre></div>
 <blockquote>
 <p>Sample response body (422) for the Country resource</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Code can't be blank"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='state'>State</h1><h2 id='states-index'>States Index</h2>
+<!-- Endpoint badges -->
+
+<p><a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Auth-Authenticated-green.svg" alt="auth_type" /></a>
+<a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Pagination-Available-green.svg" alt="auth_type" /></a>
+<a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Ordenation-Available-green.svg" alt="auth_type" /></a>
+<a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Filtering-Available-green.svg" alt="auth_type" /></a></p>
+
+<blockquote>
+<p>States index URL:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/states
+</code></pre></div>
+<blockquote>
+<p>Sample response body (200):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"states"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bahia"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET https://sandbox.airjobmanager.com/earth/states</code></p>
+
+<p>This endpoint returns all states registers</p>
+<h3 id='available-filters'>Available filters</h3>
+<ul>
+<li><code>name</code></li>
+<li><code>country</code></li>
+</ul>
+<h3 id='possible-responses'>Possible responses</h3>
+<ul>
+<li><code>200 Success</code></li>
+</ul>
+<h2 id='show-state'>Show State</h2>
+<!-- Endpoint badges -->
+
+<p><a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Auth-Authenticated-green.svg" alt="auth_type" /></a></p>
+
+<blockquote>
+<p>Show State URL:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/states/5721
+</code></pre></div>
+<blockquote>
+<p>Sample response body (200):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bahia"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET https://sandbox.airjobmanager.com/earth/states/:id</code></p>
+
+<p>This endpoint returns a state in detail</p>
+<h3 id='possible-responses-2'>Possible responses</h3>
+<ul>
+<li><code>200 Success</code></li>
+</ul>
+<h2 id='create-state'>Create State</h2>
+<!-- Endpoint badges -->
+
+<p><a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Auth-Authorized-red.svg" alt="auth_type" /></a></p>
+
+<blockquote>
+<p>Create State URL:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/states
+</code></pre></div>
+<blockquote>
+<p>Sample request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bahia"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Sample response body (201)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bahia"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST https://sandbox.airjobmanager.com/earth/states</code></p>
+
+<p>This endpoint creates a new state</p>
+<h3 id='body-parameters'>Body parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Validations</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Required, Unique</td>
+<td>State ISO Code</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Required</td>
+<td>State name</td>
+</tr>
+<tr>
+<td>country_id</td>
+<td>Required</td>
+<td>ID of the Country of this state</td>
+</tr>
+</tbody></table>
+<h3 id='possible-responses-3'>Possible responses</h3>
+<ul>
+<li><code>201 Created</code></li>
+<li><code>422 Unprocessable entity</code>
+
+<ul>
+<li>The creation is violating any of the validations described in the body parameters. In this case, the property <code>errors</code> will contain a array with user-friendly messages</li>
+</ul></li>
+</ul>
+<h2 id='update-state'>Update State</h2>
+<!-- Endpoint badges -->
+
+<p><a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Auth-Authorized-red.svg" alt="auth_type" /></a></p>
+
+<blockquote>
+<p>Update State URL:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/states/5721
+</code></pre></div>
+<blockquote>
+<p>Sample request body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil, zil, zil"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Sample response body (200)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil, zil, zil"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>PATCH OR PUT https://sandbox.airjobmanager.com/earth/states/:id</code></p>
+
+<p>This endpoint updates a existing state.</p>
+<h3 id='url-parameters'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>ID of the State to be updated</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">In the request body, you only need to provide the attributes that you want to update the value</aside>
+<h3 id='possible-responses-4'>Possible responses</h3>
+<ul>
+<li><code>200 Success</code></li>
+<li><code>404 Not Found</code>
+
+<ul>
+<li>The ID provided in the URL do not match any existing state</li>
+</ul></li>
+<li><code>422 Unprocessable entity</code>
+
+<ul>
+<li>The update is violating any of the state validations. In this case, the property <code>errors</code> will contain a array with user-friendly messages</li>
+</ul></li>
+</ul>
+
+<aside class="notice">The validations are the same valid to the <i>create</i> request</aside>
+<h2 id='delete-state'>Delete State</h2>
+<!-- Endpoint badges -->
+
+<p><a href="https://app.airjobmanager.com/"><img src="https://img.shields.io/badge/Auth-Authorized-red.svg" alt="auth_type" /></a></p>
+
+<blockquote>
+<p>Delete State URL:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plain tab-plaintext"><code>  https://sandbox.airjobmanager.com/earth/states/5721
+</code></pre></div>
+<p><code>DELETE https://sandbox.airjobmanager.com/earth/states/:id</code></p>
+
+<p>This endpoint deletes a state</p>
+<h3 id='url-parameters-2'>URL parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>ID of the State to be deleted</td>
+</tr>
+</tbody></table>
+<h3 id='possible-responses-5'>Possible responses</h3>
+<ul>
+<li><code>204 No Content</code></li>
+<li><code>404 Not Found</code>
+
+<ul>
+<li>The ID provided in the URL do not match any existing state</li>
+</ul></li>
+</ul>
+
+<blockquote>
+<p>Sample response body (404) for the State resource</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The record does not exist or has been deleted"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Couldn't find Earth::State with 'id'=5721"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Sample response body (422) for the State resource</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
     </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Code can't be blank"</span><span class="p">]</span><span class="w">
