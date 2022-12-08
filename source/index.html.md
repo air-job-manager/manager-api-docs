@@ -22,6 +22,7 @@ includes:
   - rbac
   - continents
   - countries
+  - states
 
 search: true
 
